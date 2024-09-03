@@ -7,6 +7,8 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
@@ -15,5 +17,9 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body, #__next {
     height: 100%;
+  }
+
+  body {
+    font-family: 'Poppins';
   }
 `;
