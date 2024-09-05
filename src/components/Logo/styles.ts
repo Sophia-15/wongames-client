@@ -29,13 +29,11 @@ const wrapperModifiers = {
 };
 
 export const Wrapper = styled.div<LogoProps>`
-  color: ${({ theme, color }) => theme.colors[color!]};
+  ${({ theme, color, size, hideOnMobile }) => css`
+    color: ${theme.colors[color!]};
 
-  ${({ size }) => css`
-    ${wrapperModifiers[size!]}
-  `}
+    ${!!size && wrapperModifiers[size!]}
 
-  ${({ hideOnMobile }) => css`
-    ${hideOnMobile && wrapperModifiers.hideOnMobile}
+    ${!!hideOnMobile && wrapperModifiers.hideOnMobile}
   `}
 `;

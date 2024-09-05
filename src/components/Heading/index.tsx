@@ -1,9 +1,22 @@
-import * as S from './styles';
+import { ReactNode } from "react";
+import * as S from "./styles";
 
-export function Heading() {
+export type HeadingProps = {
+  children: ReactNode;
+  color?: "white" | "black";
+  lineLeft?: boolean;
+  lineBottom?: boolean;
+};
+
+export function Heading({
+  children,
+  color = "white",
+  lineLeft = false,
+  lineBottom = false,
+}: HeadingProps) {
   return (
-    <S.Wrapper>
-      <h1>Heading</h1>
+    <S.Wrapper color={color} lineLeft={lineLeft} lineBottom={lineBottom}>
+      {children}
     </S.Wrapper>
-  )
+  );
 }
