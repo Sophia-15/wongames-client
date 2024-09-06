@@ -38,3 +38,17 @@ export const withIcon: StoryObj = {
     </>
   ),
 };
+
+export const asLink: StoryObj = {
+  args: {
+    size: "lg",
+    children: "Buy now!",
+    as: "link",
+    href: "/link",
+  },
+  render: (args) => (
+    <>
+      <Button {...args} />
+    </>
+  ),
+};
