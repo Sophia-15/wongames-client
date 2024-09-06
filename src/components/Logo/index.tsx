@@ -4,15 +4,16 @@ export type LogoProps = {
   color?: "white" | "black";
   size?: "normal" | "large";
   hideOnMobile?: boolean;
-};
+} & Omit<React.HTMLProps<HTMLDivElement>, "size">;
 
 export function Logo({
   color = "white",
   size = "normal",
   hideOnMobile = false,
+  ...rest
 }: LogoProps) {
   return (
-    <S.Wrapper color={color} size={size} hideOnMobile={hideOnMobile}>
+    <S.Wrapper color={color} size={size} hideOnMobile={hideOnMobile} {...rest}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
